@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         login_button.setOnClickListener {
             val email = username_edit_text.text.toString()
             val password = password_edit_text.text.toString()
-            //login(email,password)
+            login(email,password)
         }
         register_button.setOnClickListener {
             val email = username_edit_text.text.toString()
@@ -45,23 +45,47 @@ class MainActivity : AppCompatActivity() {
                     val user = auth.currentUser
                     Toast.makeText(baseContext, "Successfully Registered!",
                         Toast.LENGTH_LONG).show()
+                    val intent : Intent = Intent(this,DisplayActivity::class.java)
+                    intent.putExtra(CURRENT_USER_KEY,user)
+                    startActivity(intent)
                     //updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("login:", "createUserWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
 
+    companion object {
+        val CURRENT_USER_KEY = "Current_User"
+        //val CLIENT_KEY = "Clientz"
+    }
+
+    fun login(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d("login:", "signInWithEmail:success")
+                    val user = auth.currentUser
+                    Toast.makeText(baseContext, "Successfully Logged in!",
+                        Toast.LENGTH_LONG).show()
+                    val intent : Intent = Intent(this,DisplayActivity::class.java)
+                    intent.putExtra(CURRENT_USER_KEY,user)
+                    startActivity(intent)
+                    //updateUI(user)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w("login:", "signInWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
                     //updateUI(null)
                 }
 
                 // ...
             }
-    }
-
-
-
-    fun login() {
 
     }
 }
