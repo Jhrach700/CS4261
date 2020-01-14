@@ -21,4 +21,8 @@ class DisplayActivity : AppCompatActivity() {
         var currentUser = intent.extras.getSerializable("Current_User")
     }
 
+    fun fetchJson() {
+
+    }
+
 }
