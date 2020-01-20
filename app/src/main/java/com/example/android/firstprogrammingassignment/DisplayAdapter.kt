@@ -4,16 +4,17 @@ import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.example.android.firstprogrammingassignment.Feed
 import com.example.android.firstprogrammingassignment.R
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
 
-class DisplayAdapter: RecyclerView.Adapter<CustomViewHolder>()  {
+class DisplayAdapter(val feed: Feed): RecyclerView.Adapter<CustomViewHolder>()  {
 
     val videoTitles = listOf("First title","Second","Third")
 
     override fun getItemCount(): Int {
-        return videoTitles.size
+        return feed.videos.count()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -23,8 +24,9 @@ class DisplayAdapter: RecyclerView.Adapter<CustomViewHolder>()  {
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        val videoTitle = videoTitles.get(position)
-        holder?.view?.hello_text?.text = videoTitle
+        val video = feed.videos.get(position)
+        holder?.view?.hello_text?.text = video.name
+
     }
 }
 

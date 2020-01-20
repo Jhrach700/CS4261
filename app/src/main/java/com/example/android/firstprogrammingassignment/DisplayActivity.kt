@@ -20,7 +20,7 @@ class DisplayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
         recyclerview_main.layoutManager = LinearLayoutManager(this)
-        recyclerview_main.adapter = DisplayAdapter()
+        //recyclerview_main.adapter = DisplayAdapter()
         var currentUser = intent.extras.getSerializable("Current_User")
         fetchJson()
 
@@ -44,6 +44,9 @@ class DisplayActivity : AppCompatActivity() {
                 val feed = gson.fromJson(body, Feed::class.java)
 
 
+                runOnUiThread {
+                    recyclerview_main.adapter = DisplayAdapter(feed)
+                }
             }
         })
 
