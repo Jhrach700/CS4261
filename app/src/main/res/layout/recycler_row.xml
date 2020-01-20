@@ -7,14 +7,39 @@
 
 
     <ImageView
+
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" app:srcCompat="@mipmap/ic_launcher" android:id="@+id/imageView2"/>
-    <TextView
-            android:id="@+id/hello_text"
-            android:padding="40dp"
-            android:text="Hello1"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" app:srcCompat="@mipmap/ic_launcher" android:id="@+id/thumbnail"/>
+    <RelativeLayout
+
+            android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/channel_profile"
+                app:srcCompat="@mipmap/ic_launcher"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:layout_toRightOf="@+id/channel_profile"
+                android:id="@+id/video_title"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="8dp"
+                android:text="Hello1"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView
+                android:layout_toRightOf="@+id/channel_profile"
+                android:text="Hello2"
+                android:id="@+id/channel_name"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@+id/video_title"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
 
 
 </LinearLayout>
