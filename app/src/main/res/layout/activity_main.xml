@@ -8,8 +8,6 @@
         tools:context=".MainActivity">
 
     <EditText
-
-
             android:hint="username"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
@@ -20,7 +18,7 @@
             app:layout_constraintBottom_toTopOf="@+id/password_edit_text" android:id="@+id/username_edit_text"/>
 
     <EditText
-            android:text="password"
+            android:hint="password"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:id="@+id/password_edit_text" android:layout_marginEnd="161dp"
             android:layout_marginRight="161dp" app:layout_constraintEnd_toEndOf="parent"
