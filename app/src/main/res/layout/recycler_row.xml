@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
 
@@ -28,18 +30,37 @@
                 android:layout_marginLeft="8dp"
                 android:text="Hello1"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
         <TextView
-                android:layout_toRightOf="@+id/channel_profile"
-                android:text="Hello2"
                 android:id="@+id/channel_name"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/video_title"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/channel_profile"
+                android:text="Hello2" />
+
+        <TextView
+                android:id="@+id/sub_count"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/video_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/channel_name"
+                android:text="Subscribers" />
 
 
     </RelativeLayout>
 
+    <TextView
+            android:id="@+id/view_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="0dp"
+            android:text="TextView" />
 
 
 </LinearLayout>

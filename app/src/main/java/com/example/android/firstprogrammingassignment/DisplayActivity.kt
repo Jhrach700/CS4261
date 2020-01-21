@@ -19,6 +19,7 @@ class DisplayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
+        recyclerview_main.setBackgroundColor(Color.parseColor("#DDF9EC"))
         recyclerview_main.layoutManager = LinearLayoutManager(this)
         //recyclerview_main.adapter = DisplayAdapter()
         var currentUser = intent.extras.getSerializable("Current_User")
@@ -60,4 +61,4 @@ class Feed(val videos: List<Video>)
 class Video(val id: Int, val name: String, val link : String, val imageUrl : String, val numberOfViews : Int,
             val channel: Channel)
 
-class Channel(val name: String, val profileImageUrl : String)
+class Channel(val name: String, val profileImageUrl : String, val numberOfSubscribers: Int)
