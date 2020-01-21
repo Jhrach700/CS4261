@@ -19,6 +19,7 @@ class DisplayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
+        recyclerview_main.setBackgroundColor(Color.parseColor("#DDF9EC"))
         recyclerview_main.layoutManager = LinearLayoutManager(this)
         //recyclerview_main.adapter = DisplayAdapter()
         var currentUser = intent.extras.getSerializable("Current_User")
