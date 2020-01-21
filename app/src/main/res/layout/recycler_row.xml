@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/video_title"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/channel_profile"
                 android:text="Hello2" />
@@ -53,6 +53,14 @@
 
 
     </RelativeLayout>
+
+    <TextView
+            android:id="@+id/view_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="0dp"
+            android:text="TextView" />
 
 
 </LinearLayout>
