@@ -1,5 +1,6 @@
 package layout
 
+import android.content.Intent
 import android.os.Build.VERSION_CODES.P
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,8 @@ import com.example.android.firstprogrammingassignment.Feed
 import com.example.android.firstprogrammingassignment.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.recycler_row.view.*
+
+
 
 
 class DisplayAdapter(val feed: Feed): RecyclerView.Adapter<CustomViewHolder>()  {
@@ -35,9 +38,15 @@ class DisplayAdapter(val feed: Feed): RecyclerView.Adapter<CustomViewHolder>()  
         Picasso.with(holder?.view?.context).load(video.imageUrl).into(thumbnail_imageView)
         val channel_imageView = holder?.view?.channel_profile
         Picasso.with(holder?.view?.context).load(video.channel.profileImageUrl).into(channel_imageView)
+        holder.view.setOnClickListener() {
+            var url = video.link
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = android.net.Uri.parse(url)
+            holder?.view?.context?.startActivity(i)
+
+        }
     }
 }
 
 class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view) {
-
 }
