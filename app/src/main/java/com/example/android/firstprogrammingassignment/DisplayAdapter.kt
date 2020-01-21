@@ -29,6 +29,7 @@ class DisplayAdapter(val feed: Feed): RecyclerView.Adapter<CustomViewHolder>()  
         val video = feed.videos.get(position)
         holder?.view?.video_title?.text = video.name
         holder?.view?.channel_name?.text =  video.channel.name
+        holder?.view?.sub_count?.text = video.channel.numberOfSubscribers.toString() + " Subscribers"
         val thumbnail_imageView = holder?.view?.thumbnail
         Picasso.with(holder?.view?.context).load(video.imageUrl).into(thumbnail_imageView)
         val channel_imageView = holder?.view?.channel_profile
